@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.datasource.demo.mapper.DemoMapper">
+    <insert id="insertUser">
+      insert into t_user values(#{user.id},#{user.name},#{user.age})
+    </insert>
+    <update id="updateUser">
+    update t_user set
+    name = #{user.name}
+    ,
+    age = #{user.age}
+     where id = #{user.id}
+    </update>
+    <delete id="removeUser">
+
+    </delete>
+
+    <select id="getUserInfo" resultType="com.datasource.demo.entity.User">
+      select * from t_user where id = #{id}
+    </select>
+    <select id="selectUserInfo" resultType="com.datasource.demo.entity.User">
+
+    </select>
+</mapper>
